@@ -1,0 +1,22 @@
+{
+  "name": "npmtestrails",
+  "version": "1.0.0",
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "npm run babel && npm run browserify",
+    "watch": "onchange 'vendor/assets/javascripts/prebuild/*.js' -- npm run build",
+    "babel": "babel vendor/assets/javascripts/prebuild/*.js -d vendor/assets/javascripts/babelbuild",
+    "browserify": "browserify vendor/assets/javascripts/babelbuild/vendor/assets/javascripts/prebuild/*.js -o app/assets/javascripts/output.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "onchange": "^3.2.1"
+  }
+}
